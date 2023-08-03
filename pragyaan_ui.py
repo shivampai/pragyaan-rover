@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import json
-
+data = [{"location":'vikramlander','moisture_found':False}]
 def file_new():
     messagebox.showinfo("New", "New File")
 
@@ -14,12 +14,10 @@ def file_save():
     messagebox.showinfo("Save", "Save File")
 
 def moisture_json():
-    data = {
-    "name": "John Doe",
-    "age": 30,
-    "email": "john.doe@example.com",
-    "is_student": True
-    }
+    data.append({
+    "location": (69.367621, 32.348126),
+    "moisture_found": True
+    })
     file_path = "moisture.json"
     with open(file_path, 'w') as json_file:
       json.dump(data, json_file, indent=4)
