@@ -5,29 +5,47 @@ import json
 data = [{"location":'vikramlander','moisture_found':False}]
 #
 #
+ser = serial.Serial('COM6', 9600)
+
+
 def file_new():
     messagebox.showinfo("New", "New File")
 
 def soil_sensor_toggle():
-    if 1==1:
-        messagebox.showinfo('Success','Soil Moisture Sensor Deploy Success!')
-    else:
-        messagebox.showerror('Failure','Soil Moisture Sensor Deploy Failure!')
+    message="m"
+    ser.write(message.encode())  # Encode the message as bytes before sending
+    print(f"Sent message: {message}")
+    data = ser.readline().decode().strip()
+    print("Received data:", data)
+
+    if data=='2001':
+        messagebox.showinfo('Success','Soil Moisture Sensor Deployed Successfully!')
+    elif data=='2002':
+        messagebox.showerror('Success','Soil Moisture Sensor Retracted Successfully!')
 def file_save():
     messagebox.showinfo("Save", "Save File")
 
 def moisture_json():
     data.append({
     "location": (69.367621, 32.348126),
-    "moisture_found": True
+    "moisture_found": True  
     })
     file_path = "moisture.json"
     with open(file_path, 'w') as json_file:
       json.dump(data, json_file, indent=4)
     messagebox.showinfo('File Save Success','Saved As moisture.json file')
+    
 def headlights_toggle():
-    if 1 == 1:
-        messagebox.showinfo("Success","Headlight Start Success!")
+    message="h"
+    ser.write(message.encode())  # Encode the message as bytes before sending
+    print(f"Sent message: {message}")
+    data = ser.readline().decode().strip()
+    print("Received data:", data)
+
+    if data=='2001':
+        messagebox.showinfo('Success','Headlight Turned On Successfully!')
+    elif data=='2002':
+        messagebox.showerror('Success','Headlight Turned Off Successfully!')
 
 # Create the main application window
 
