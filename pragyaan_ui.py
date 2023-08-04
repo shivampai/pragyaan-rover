@@ -1,7 +1,10 @@
 import tkinter as tk
 from tkinter import messagebox
+import serial
 import json
 data = [{"location":'vikramlander','moisture_found':False}]
+#
+#
 def file_new():
     messagebox.showinfo("New", "New File")
 
@@ -27,6 +30,7 @@ def headlights_toggle():
         messagebox.showinfo("Success","Headlight Start Success!")
 
 # Create the main application window
+
 root = tk.Tk()
 root.title("Chandrayaan 3 Rover")
 root.geometry('600x600')
@@ -49,5 +53,4 @@ data_menu = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_cascade(label="Data", menu=data_menu)
 data_menu.add_command(label="Save moisture as .json", command=moisture_json)
 
-# Start the main event loop
 root.mainloop()
