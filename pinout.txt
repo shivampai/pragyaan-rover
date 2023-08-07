@@ -1,0 +1,7 @@
+Leftir - D4
+Right ir - D7
+mSensor - A0
+headlight - D13
+soilServo - D9
+flagServo - D10
+Ultrasonic - Trig - A2 , Echo - A3
