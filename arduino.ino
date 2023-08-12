@@ -27,6 +27,7 @@ Servo flagServo; // Create a servo object
 //soilServo - D9
 //flagServo - D10
 //Ultrasonic - Trig - A2 , Echo - A3
+//DHT - D2
 int ledPin = 13;
 char command;
 int ledStatus = 0;
