@@ -1,0 +1,13 @@
+[
+    {
+        "location": "vikramlander",
+        "moisture_found": false
+    },
+    {
+        "location": [
+            69.367621,
+            32.348126
+        ],
+        "moisture_found": true
+    }
+]

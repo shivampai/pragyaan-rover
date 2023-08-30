@@ -110,7 +110,7 @@ def hud_data():
      
       sm_ch_data.append(int(data_list[2]))
       draw_soil_moisture_line_chart(sm_ch_data)
-    
+      return data
 #def display_image():    
  #   image_path = "assets/map_marked.png"  # Replace with the path to your image
   #  image = Image.open(image_path)
@@ -168,17 +168,19 @@ def headlights_toggle():
         messagebox.showinfo('Success','Headlight Turned On Successfully!')
     elif data=='2002':
         messagebox.showinfo('Success','Headlight Turned Off Successfully!')
-def hud_data1():
-    '''
-    hud_data()
-    time.sleep(3)
-    hud_data()
-    time.sleep(2)
-    '''
-    setInterval(hud_data, 5)
-    #'''
-# Create the main application window
 
+def hud_data1():
+    while True:
+        d = hud_data()
+#'''
+        if d:
+            print('Ok')
+            time.sleep(1)
+            
+        else:
+            print('no')
+            time.sleep(5)
+#'''
 root = Tk()
 root.title("Pragyaan Telemetrics")
 root.geometry('1920x1080')
