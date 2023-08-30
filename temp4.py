@@ -35,12 +35,12 @@ def draw_arc():
       canvas.create_oval(85, 50, 100, 65, fill="red", outline="")
 
 root = tk.Tk()
-root.title("Canvas Arc Example")
+root.title("Pragyaan TM2")
 root.geometry('500x350')
 canvas = tk.Canvas(root, width=300, height=300)
 canvas.pack()
 
-arc_button = tk.Button(root, text="Draw Arc", command=draw_arc)
+arc_button = tk.Button(root, text="Start Fetch", command=draw_arc)
 arc_button.pack()
 
 root.mainloop()
