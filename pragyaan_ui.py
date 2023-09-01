@@ -185,6 +185,7 @@ root = Tk()
 root.title("Pragyaan Telemetrics")
 root.geometry('1920x1080')
 
+root.iconbitmap('icon.ico')
 
 # Create the Menu Bar
 menu_bar = Menu(root)
